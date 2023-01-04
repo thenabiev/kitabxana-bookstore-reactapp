@@ -1,0 +1,163 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+body{
+    background-color: #161616;
+}
+.bg-black{
+    background-color: #000;
+}
+.bg-orange{
+    background-color: orange;
+}
+.text-white{
+    color: #fff;
+}
+.text-black{
+    color: #000;
+}
+.text-center{
+    text-align: center;
+}
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    
+}
+.navbar{
+    padding: 1rem 0;
+    position: sticky;
+    top: 0px;
+    z-index: 100;
+}
+.navbar .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar h1 span{
+    margin-left: 5px;
+    padding: 0 5px;
+    border-radius: 5px;
+}
+.nav-link{
+    margin-left: 10px;
+}
+.nav-link.active{
+    color: orange;
+}
+.nav-link .nav-icon{
+    display: none;
+}
+.footer{
+    margin-top: 1rem ;
+    
+}
+.footer p{
+    line-height: 3rem;
+}
+.bookList, .favorites{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1rem;
+    margin: 2rem auto;
+}
+.favorites{
+    min-height: 80vh;
+}
+
+.card{
+    border-radius: 8px;
+    border: 1px solid #555;
+    padding: 10px 5px;
+    position: relative;
+    overflow: hidden;
+}
+.card .imgBox{
+    width: 100%;
+    height: 320px;
+    overflow: hidden;
+    border-radius: 5px;
+}
+.card .imgBox img{
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    transition: .4s;
+}
+.card h4{
+    padding: 10px 0;
+}
+.card .description{
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    max-height: 50px;
+}
+.card .description .layer{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: linear-gradient(to bottom, transparent, #161616);
+}
+.card .btnContainer{
+    position: absolute;
+    top: 0; right: -100%;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    background: linear-gradient(to right, transparent, #161616);
+    padding: 3em 20px;
+    gap: 1rem;
+    transition: .4s;
+}
+.card:hover .btnContainer{
+    right: 0;
+}
+.card:hover .imgBox img{
+    transform: scale(1.1);
+}
+.card .btnContainer .cardIcon{
+    color: #fff;
+    cursor: pointer;
+    transition: .3s;
+}
+.card .btnContainer .cardIcon:hover{
+    color: orange;
+}
+
+.favorites .card{
+    max-width: 320px;
+    max-height: 450px;
+}
+
+.details{
+    padding: 3rem 1rem;
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+
+}
+
+@media(max-width:501px){
+    .nav-link{
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .nav-link span{
+        display: none;
+    }
+    .nav-link .nav-icon{
+        display: block;
+    }
+}
